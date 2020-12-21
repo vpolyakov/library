@@ -1,0 +1,7 @@
+<library>
+    <author code="2" surname="Сузи" name="Роман" shortname="Р" shortsecname="А"/>
+	<publ code="0" name="Москва Мир" shortname="М.: Просвещение"/>
+    <book code="0" name="Матричный анализ" year="1989" pages="655" publ="0">
+	    <author code="2"/>
+	</book>
+</library>
