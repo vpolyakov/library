@@ -1,28 +1,28 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-from authorlist import authorList
-from author import author
+from authorlist import AuthorList
+from author import Author
 
 
-class authorListEdit(authorList):
+class AuthorListEdit(AuthorList):
     def __init__(self):
-        authorList.__init__(self)
+        AuthorList.__init__(self)
 
-    def newAuthor(self, code=0, surname='', name='', secname='', shortname='', shortsecname=''):
-        self._authors.append(author(code, surname, name, secname, shortname, shortsecname))
+    def new_author(self, code=0, surname='', name='', secname='', shortname='', shortsecname=''):
+        self._authors.append(Author(code, surname, name, secname, shortname, shortsecname))
 
-    def setAuthorSurname(self, code, value):
-        self.findAuthorByCode(code).setSurname(value)
+    def set_author_surname(self, code, value):
+        self.findAuthorByCode(code).set_surname(value)
 
-    def setAuthorName(self, code, value):
-        self.findAuthorByCode(code).setName(value)
+    def set_author_name(self, code, value):
+        self.findAuthorByCode(code).set_name(value)
 
-    def setAuthorSecname(self, code, value):
-        self.findAuthorByCode(code).setSecname(value)
+    def set_author_secname(self, code, value):
+        self.findAuthorByCode(code).set_secname(value)
 
-    def setAuthorShortname(self, code, value):
-        self.findAuthorByCode(code).setShortname(value)
+    def set_author_shortname(self, code, value):
+        self.findAuthorByCode(code).set_shortname(value)
 
-    def setAuthorShortsecname(self, code, value):
-        self.findAuthorByCode(code).setShortsecname(value)
+    def set_author_shortsecname(self, code, value):
+        self.findAuthorByCode(code).set_shortsecname(value)

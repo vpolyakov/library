@@ -1,19 +1,21 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-class general:
+class General:
     def __init__(self, code=0, name=''):
-        self.setCode(code)
-        self.setName(name)
+        self.__code = None  # Добавил
+        self.__name = None  # Добавил
+        self.set_code(code)
+        self.set_name(name)
 
-    def setCode(self, value):
+    def set_code(self, value):
         self.__code = value
 
-    def setName(self, value):
+    def set_name(self, value):
         self.__name = value
 
-    def getCode(self):
+    def get_code(self):
         return self.__code
 
-    def getName(self):
+    def get_name(self):
         return self.__name

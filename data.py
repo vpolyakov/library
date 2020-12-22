@@ -2,7 +2,7 @@
 # coding: utf-8
 
 
-class data:
+class Data:
     def __init__(self, lib=None, inp='', out=''):
         self.setLib(lib)
         self.setInp(inp)

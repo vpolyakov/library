@@ -1,29 +1,29 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-from generallist import generalList
+from generallist import GeneralList
 
 
-class authorList(generalList):
-    def getSurname(self, code):
-        return self.findByCode(code).getSurname()
+class AuthorList(GeneralList):
+    def get_surname(self, code):
+        return self.find_by_code(code).get_surname()
 
-    def getSecname(self, code):
-        return self.findByCode(code).getSecname()
+    def get_secname(self, code):
+        return self.find_by_code(code).get_secname()
 
-    def getShortname(self, code):
-        return self.findByCode(code).getShortname()
+    def get_shortname(self, code):
+        return self.find_by_code(code).get_shortname()
 
-    def getShortsecname(self, code):
-        return self.findByCode(code).getShortsecname()
+    def get_shortsecname(self, code):
+        return self.find_by_code(code).get_shortsecname()
 
-    def getBibliostr(self, code):
-        return self.findByCode(code).getBibliostr()
+    def get_bibliostr(self, code):
+        return self.find_by_code(code).get_bibliostr()
 
-    def getListBibliostr(self):
+    def get_list_bibliostr(self):
         s = ''
-        for code in self.getCodes():
-            s += self.getBibliostr(code)+', '
+        for code in self.get_codes():
+            s += self.get_bibliostr(code) + ', '
             if s:
                 s = s[:-2]
             return s

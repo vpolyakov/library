@@ -1,7 +1,7 @@
-from library import library
-from dataxml import dataxml as data_lib
+from library import Library
+from dataxml import DataXML
 
-lib1 = library()
-dat1 = data_lib()
+lib1 = Library()
+dat1 = DataXML()
 
 dat1.read('my_lib.xml', lib1)

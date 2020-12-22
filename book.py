@@ -1,54 +1,94 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[5]:
+from general import General
+from publ import Publ
+from authorlist import AuthorList
 
 
-from general import general
-from publ import publ
-from authorlist import authorList
-class book(general):
-    def __init__(self,code=0,name='',img='',publ=None,year=0,pages=0):
-        general.__init__(self,code,name)
-        self.__authors=authorList()
-        self.setImg(img)
-        self.setPubl(publ)
-        self.setPages(pages)
-        self.setYear(year)
-    def setImg(self,value):self.__img=value
-    def setPubl(self,value):
-        if isinstance(value,publ):self.__publ=value
-    def setPages(self,value):self.__pages=value
-    def setYear(self,value):self.__year=value
-    def getImg(self):return self.__img
-    def getPublCode(self):
-        if self.__publ:return self.__publ.getCode()
-    def getPublName(self):
-        if self.__publ:return self.__publ.getName()
-        else:return ''
-    def getPublShortname(self):
-        if self.__publ:return self.__publ.getShortname()
-        else:return ''
-    def getPages(self):return self.__pages
-    def getYear(self):return self.__year
-    def appendAuthor(self,value):self.__authors.appendList(value)
-    def removeAuthor(self,code):self.__authors.removeList(code)
-    def clearAuthors(self):self.__authors.clear()
-    def getAuthorCodes(self):return self.__authors.getCodes()
-    def getAuthorName(self,code):return self.__authors.findByCode(code).getSurname()
-    def getAuthorSurname(self,code):return self.__authors.findByCode(code).getSurname()
-    def getAuthorSecname(self,code):return self.__authors.findByCode(code).getSecname()
-    def getAuthorShortname(self,code):return self.__authors.findByCode(code).getShortname()
-    def getAuthorShortsecname(self,code):return self.__authors.findByCode(code).getShortsecname()
-    def getAuthorsBibliostr(self):return self.__authors.getListBibliostr()
-    def getBibliostr(self):
-        s=self.getAuthorsBibliostr()
-        s+=' %s - %s, %s. - %s c.'%(self.getName(),self.getPublShortname(),str(self.getYear()),str(self.getPages()))
+class Book(General):
+    def __init__(self, code=0, name='', img='', publ=None, year=0, pages=0):
+        General.__init__(self, code, name)
+        self.__img = None
+        self.__publ = None
+        self.__pages = None
+        self.__year = None
+        self.__authors = AuthorList()
+        self.set_img(img)
+        self.set_publ(publ)
+        self.set_pages(pages)
+        self.set_year(year)
+
+    def set_img(self, value):
+        self.__img = value
+
+    def set_publ(self, value):
+        if isinstance(value, Publ):
+            self.__publ = value
+
+    def set_pages(self, value):
+        self.__pages = value
+
+    def set_year(self, value):
+        self.__year = value
+
+    def get_img(self):
+        return self.__img
+
+    def get_publ_code(self):
+        if self.__publ:
+            return self.__publ.get_code()
+
+    def get_publ_name(self):
+        if self.__publ:
+            return self.__publ.get_name()
+        else:
+            return ''
+
+    def get_publ_shortname(self):
+        if self.__publ:
+            return self.__publ.get_shortname()
+        else:
+            return ''
+
+    def get_pages(self):
+        return self.__pages
+
+    def get_year(self):
+        return self.__year
+
+    def append_author(self, value):
+        self.__authors.append_list(value)
+
+    def remove_author(self, code):
+        self.__authors.remove_list(code)
+
+    def clear_authors(self):
+        self.__authors.clear()
+
+    def get_author_codes(self):
+        return self.__authors.get_codes()
+
+    def get_author_name(self, code):
+        return self.__authors.find_by_code(code).get_surname()
+
+    def get_author_surname(self, code):
+        return self.__authors.find_by_code(code).get_surname()
+
+    def get_author_secname(self, code):
+        return self.__authors.find_by_code(code).get_secname()
+
+    def get_author_shortname(self, code):
+        return self.__authors.find_by_code(code).get_shortname()
+
+    def get_author_shortsecname(self, code):
+        return self.__authors.find_by_code(code).get_shortsecname()
+
+    def get_authors_bibliostr(self):
+        return self.__authors.get_list_bibliostr()
+
+    def get_bibliostr(self):
+        s = self.get_authors_bibliostr()
+        s += ' %s - %s, %s. - %s c.' % (self.get_name(), self.get_publ_shortname(),
+                                        str(self.get_year()), str(self.get_pages()))
         return s
-
-
-# In[ ]:
-
-
-
-

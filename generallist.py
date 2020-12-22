@@ -1,28 +1,28 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-class generalList:
+class GeneralList:
     def __init__(self):
         self.__list = []
 
     def clear(self):
         self.__list = []
 
-    def findByCode(self, code):
-        for l in self.__list:
-            if l.getCode() == code:
-                return l
+    def find_by_code(self, code):
+        for item in self.__list:  # Добавил Изменил l на item
+            if item.get_code() == code:
+                return item
 
-    def getCodes(self):
-        return [s.getCode() for s in self.__list]
+    def get_codes(self):
+        return [s.get_code() for s in self.__list]
 
-    def appendList(self, value):
+    def append_list(self, value):
         self.__list.append(value)
 
-    def removeList(self, code):
+    def remove_list(self, code):
         for s in self.__list:
-            if s.getCode() == code:
+            if s.get_code() == code:
                 self.__list.remove(s)
 
-    def getName(self, code):
-        return self.findByCode(code).getName()
+    def get_name(self, code):
+        return self.find_by_code(code).get_name()
