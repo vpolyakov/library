@@ -179,3 +179,9 @@ class Library:
 
     def get_book_bibliostr(self, code):
         return self.__books.get_bibliostr(code)
+
+    def get_bibliostr(self):
+        __bibliostr = []
+        for code in self.get_book_codes():
+            __bibliostr.append(self.get_book_bibliostr(code))
+        return __bibliostr

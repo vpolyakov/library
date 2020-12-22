@@ -1,5 +1,6 @@
 <library>
-    <author code="2" surname="Сузи" name="Роман" shortname="Р" shortsecname="А"/>
+    <author code="1" surname="Пузо" name="Вася" shortname="В" shortsecname="В"/>
+	<author code="2" surname="Сузи" name="Роман" shortname="Р" shortsecname="А"/>
 	<publ code="0" name="Москва Мир" shortname="М.: Просвещение"/>
     <book code="0" name="Матричный анализ" year="1989" pages="655" publ="0">
 	    <author code="2"/>
@@ -8,6 +9,6 @@
 	    <author code="2"/>
 	</book>
 	<book code="2" name="Вообще не анализ" year="2010" pages="100" publ="0">
-	    <author code="2"/>
+	    <author code="1"/>
 	</book>
 </library>
