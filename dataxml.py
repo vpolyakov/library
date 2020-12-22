@@ -6,7 +6,8 @@ import xml.dom.minidom
 
 
 class DataXML:
-    def read(self, inp, lib):
+    @staticmethod
+    def read(inp, lib):
         dom = xml.dom.minidom.parse(inp)
         dom.normalize()
         for node in dom.childNodes[0].childNodes:
@@ -57,7 +58,8 @@ class DataXML:
                                 author = lib.findAuthorByCode(int(t[1]))
                 lib.append_book_author(code, author)
 
-    def write(self, out, lib):
+    @staticmethod
+    def write(out, lib):
         dom = xml.dom.minidom.Document()
         root = dom.createElement("library")
         dom.appendChild(root)
@@ -90,3 +92,4 @@ class DataXML:
             root.appendChild(bk)
             f = open(out, "w")
             f.write(dom.toprettyxml(encoding='utf-8'))
+            f.close()

@@ -1,11 +1,13 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-from authorlist import AuthorList
 from author import Author
+from authorlist import AuthorList
 
 
 class AuthorListEdit(AuthorList):
+    # TODO
+
     def __init__(self):
         AuthorList.__init__(self)
 

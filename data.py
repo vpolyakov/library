@@ -4,36 +4,40 @@
 
 class Data:
     def __init__(self, lib=None, inp='', out=''):
-        self.setLib(lib)
-        self.setInp(inp)
-        self.setOut(out)
+        self.__lib = None
+        self.__inp = None
+        self.__out = None
+        self.set_lib(lib)
+        self.set_inp(inp)
+        self.set_out(out)
 
-    def setLib(self, value):
+    def set_lib(self, value):
         self.__lib = value
 
-    def setInp(self, value):
+    def set_inp(self, value):
         self.__inp = value
 
-    def setOut(self, value):
+    def set_out(self, value):
         self.__out = value
 
-    def getLib(self):
+    def get_lib(self):
         return self.__lib
 
-    def getInp(self):
+    def get_inp(self):
         return self.__inp
 
-    def getOut(self):
+    def get_out(self):
         return self.__out
 
-    def readFile(self, filename):
-        self.setInp(filename)
+    def read_file(self, filename):
+        self.set_inp(filename)
         self.read()
 
-    def writeFile(self, filename):
-        self.setOut(filename)
+    def write_file(self, filename):
+        self.set_out(filename)
         self.write()
 
+    # TODO
     def read(self):
         pass
 

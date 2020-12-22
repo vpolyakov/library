@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+from authorlist import AuthorList
 from general import General
 from publ import Publ
-from authorlist import AuthorList
 
 
 class Book(General):

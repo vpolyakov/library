@@ -6,6 +6,7 @@ from booklistedit import BookListEdit
 from publlistedit import PublListEdit
 
 
+# TODO
 class Library(AuthorListEdit, PublListEdit, BookListEdit):
     def __init__(self):
         AuthorListEdit.__init__(self)
