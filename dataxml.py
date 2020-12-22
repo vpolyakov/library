@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# import os
 import xml.dom.minidom
 
 
@@ -55,7 +54,7 @@ class DataXML:
                     if (n.nodeType == n.ELEMENT_NODE) and (n.nodeName == 'author'):
                         for t in n.attributes.items():
                             if t[0] == "code":
-                                author = lib.findAuthorByCode(int(t[1]))
+                                author = lib.find_author_by_code(int(t[1]))
                 lib.append_book_author(code, author)
 
     @staticmethod
@@ -90,6 +89,6 @@ class DataXML:
             aut.setAttribute('code', str(ac))
             bk.appendChild(aut)
             root.appendChild(bk)
-            f = open(out, "w")
+            f = open(out, "wb")
             f.write(dom.toprettyxml(encoding='utf-8'))
             f.close()

@@ -3,28 +3,25 @@
 
 from author import Author
 from authorlist import AuthorList
+from generallistedit import GeneralListEdit
 
 
-class AuthorListEdit(AuthorList):
-    # TODO
+class AuthorListEdit(AuthorList, GeneralListEdit):
 
-    def __init__(self):
-        AuthorList.__init__(self)
+    def new_rec(self, code=0, surname='', name='', secname='', shortname='', shortsecname=''):
+        self.append_list(Author(code, surname, name, secname, shortname, shortsecname))
 
-    def new_author(self, code=0, surname='', name='', secname='', shortname='', shortsecname=''):
-        self._authors.append(Author(code, surname, name, secname, shortname, shortsecname))
+    def set_surname(self, code, value):
+        self.find_by_code(code).set_surname(value)
 
-    def set_author_surname(self, code, value):
-        self.findAuthorByCode(code).set_surname(value)
+    def set_name(self, code, value):
+        self.find_by_code(code).set_name(value)
 
-    def set_author_name(self, code, value):
-        self.findAuthorByCode(code).set_name(value)
+    def set_secname(self, code, value):
+        self.find_by_code(code).set_secname(value)
 
-    def set_author_secname(self, code, value):
-        self.findAuthorByCode(code).set_secname(value)
+    def set_shortname(self, code, value):
+        self.find_by_code(code).set_shortname(value)
 
-    def set_author_shortname(self, code, value):
-        self.findAuthorByCode(code).set_shortname(value)
-
-    def set_author_shortsecname(self, code, value):
-        self.findAuthorByCode(code).set_shortsecname(value)
+    def set_shortsecname(self, code, value):
+        self.find_by_code(code).set_shortsecname(value)

@@ -4,4 +4,10 @@
     <book code="0" name="Матричный анализ" year="1989" pages="655" publ="0">
 	    <author code="2"/>
 	</book>
+	<book code="1" name="Нематричный и не анализ" year="2020" pages="500" publ="0">
+	    <author code="2"/>
+	</book>
+	<book code="2" name="Вообще не анализ" year="2010" pages="100" publ="0">
+	    <author code="2"/>
+	</book>
 </library>
