@@ -36,7 +36,7 @@ class BookListEdit(GeneralListEdit):
     def get_publ_code(self, code):
         return self.find_by_code(code).get_publ_code()
 
-    def get_pub_name(self, code):
+    def get_publ_name(self, code):
         return self.find_by_code(code).get_publ_name()
 
     def get_publ_shortname(self, code):

@@ -145,10 +145,10 @@ class Library:
         return self.__books.get_publ_code(code)
 
     def get_book_publ_name(self, code):
-        return self.__books.get_pub_name(code)
+        return self.__books.get_publ_name(code)
 
     def get_book_publ_shortname(self, code):
-        return self.__books.get_pub_name(code)
+        return self.__books.get_publ_name(code)
 
     def get_book_pages(self, code):
         return self.__books.get_pages(code)

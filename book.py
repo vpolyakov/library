@@ -70,7 +70,7 @@ class Book(General):
         return self.__authors.get_codes()
 
     def get_author_name(self, code):
-        return self.__authors.find_by_code(code).get_surname()
+        return self.__authors.find_by_code(code).get_name()
 
     def get_author_surname(self, code):
         return self.__authors.find_by_code(code).get_surname()
