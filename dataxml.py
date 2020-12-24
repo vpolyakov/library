@@ -11,10 +11,10 @@ class DataXML:
         dom.normalize()
         for node in dom.childNodes[0].childNodes:
             if (node.nodeType == node.ELEMENT_NODE) and (node.nodeName == 'author'):
-                code, surname, name, secname, shortname, shortsecname = 0, "", "", "", "", ""
+                acode, surname, name, secname, shortname, shortsecname = 0, "", "", "", "", ""
                 for t in node.attributes.items():
                     if t[0] == "code":
-                        code = int(t[1])
+                        acode = int(t[1])
                     if t[0] == "name":
                         name = t[1]
                     if t[0] == "surname":
@@ -25,22 +25,23 @@ class DataXML:
                         shortname = t[1]
                     if t[0] == "shortsecname":
                         shortsecname = t[1]
-                lib.new_author(code, surname, name, secname, shortname, shortsecname)
+                lib.new_author(code=acode, surname=surname, name=name, secname=secname,
+                               shortname=shortname, shortsecname=shortsecname)
             if (node.nodeType == node.ELEMENT_NODE) and (node.nodeName == 'publ'):
-                code, name, shortname = 0, "", ""
+                pcode, name, shortname = 0, "", ""
                 for t in node.attributes.items():
                     if t[0] == "code":
-                        code = int(t[1])
+                        pcode = int(t[1])
                     if t[0] == "name":
                         name = t[1]
                     if t[0] == "shortname":
                         shortname = t[1]
-                lib.new_publ(code, name, shortname)
+                lib.new_publ(code=pcode, name=name, shortname=shortname)
             if (node.nodeType == node.ELEMENT_NODE) and (node.nodeName == 'book'):
-                code, name, publ, year, pages = 0, '', None, 0, 0
+                bcode, name, publ, year, pages = 0, '', None, 0, 0
                 for t in node.attributes.items():
                     if t[0] == "code":
-                        code = int(t[1])
+                        bcode = int(t[1])
                     if t[0] == "name":
                         name = t[1]
                     if t[0] == "year":
@@ -49,13 +50,13 @@ class DataXML:
                         pages = int(t[1])
                     if t[0] == "publ":
                         publ = lib.find_publ_by_code(int(t[1]))
-                lib.new_book(code, name, publ, year, pages)
+                lib.new_book(code=bcode, name=name, publ=publ, year=year, pages=pages)
                 for n in node.childNodes:
                     if (n.nodeType == n.ELEMENT_NODE) and (n.nodeName == 'author'):
                         for t in n.attributes.items():
                             if t[0] == "code":
                                 author = lib.find_author_by_code(int(t[1]))
-                lib.append_book_author(code, author)
+                                lib.append_book_author(bcode=bcode, value=author)
 
     @staticmethod
     def write(out, lib):
@@ -84,11 +85,11 @@ class DataXML:
             bk.setAttribute('year', str(lib.get_book_year(c)))
             bk.setAttribute('pages', str(lib.get_book_pages(c)))
             bk.setAttribute('publ', str(lib.get_book_publ_code(c)))
-        for ac in lib.get_book_author_codes(c):
-            aut = dom.createElement("author")
-            aut.setAttribute('code', str(ac))
-            bk.appendChild(aut)
+            for ac in lib.get_book_author_codes(c):
+                aut = dom.createElement("author")
+                aut.setAttribute('code', str(ac))
+                bk.appendChild(aut)
             root.appendChild(bk)
-            f = open(out, "wb")
-            f.write(dom.toprettyxml(encoding='utf-8'))
-            f.close()
+        f = open(out, "wb")
+        f.write(dom.toprettyxml(encoding='utf-8'))
+        f.close()

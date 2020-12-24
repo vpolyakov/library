@@ -3,6 +3,7 @@
 	<author code="2" surname="Сузи" name="Роман" shortname="Р" shortsecname="А"/>
 	<publ code="0" name="Москва Мир" shortname="М.: Просвещение"/>
     <book code="0" name="Матричный анализ" year="1989" pages="655" publ="0">
+		<author code="1"/>
 	    <author code="2"/>
 	</book>
 	<book code="1" name="Нематричный и не анализ" year="2020" pages="500" publ="0">
