@@ -24,6 +24,6 @@ class AuthorList(GeneralList):
         s = ''
         for code in self.get_codes():
             s += self.get_bibliostr(code) + ', '
-            if s:
-                s = s[:-2]
-            return s
+        if s:
+            s = s[:-2]
+        return s
